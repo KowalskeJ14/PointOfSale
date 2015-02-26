@@ -5,7 +5,7 @@ package pointofsale;
  *
  * @author kowal_000
  */
-public class PercentOffStrategy {
+public class PercentOffStrategy implements DiscountStrategy {
     private double discountRate = 0.10;
     
     public PercentOffStrategy(){
@@ -16,18 +16,22 @@ public class PercentOffStrategy {
         this.discountRate = discountRate;
     }
     
+    @Override
     public double getDiscountAmount(double price, int quantity){
         return discountRate * quantity * price;
     }
     
+    @Override
     public double getDiscountTotal(double price, int quantity){
         return price * quantity - getDiscountAmount(price, quantity);
     }
 
+    @Override
     public double getDiscountRate() {
         return discountRate;
     }
 
+    @Override
     public void setDiscountRate(double discountRate) {
         this.discountRate = discountRate;
     }
