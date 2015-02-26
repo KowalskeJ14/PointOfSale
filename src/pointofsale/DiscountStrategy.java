@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package pointofsale;
 
@@ -12,12 +7,12 @@ package pointofsale;
  */
 public interface DiscountStrategy {
 
-    double getDiscountAmount(double price, int quantity);
+    public abstract double getDiscountAmount(double price, int quantity);
 
-    double getDiscountRate();
+    public abstract double getDiscountRate();
 
-    double getDiscountTotal(double price, int quantity);
+    public abstract double getDiscountTotal(double price, int quantity);
 
-    void setDiscountRate(double discountRate);
+    public abstract void setDiscountRate(double discountRate);
     
 }
