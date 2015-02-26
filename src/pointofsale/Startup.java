@@ -5,13 +5,15 @@ package pointofsale;
  *
  * @author kowal_000
  */
-public class PointOfSale {
+public class Startup {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        CashRegister register = new CashRegister("A101", 1){
+            
+        };
     }
     
 }
