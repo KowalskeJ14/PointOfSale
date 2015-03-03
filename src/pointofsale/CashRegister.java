@@ -12,7 +12,29 @@ package pointofsale;
  */
 public class CashRegister {
     
-    public CashRegister(String prodId, int qty) {
+    private Receipt receipt;
+
+    public CashRegister() {
+        
     }
     
+    public Receipt getReceipt() {
+        return receipt;
+    }
+
+    public void setReceipt(Receipt receipt) {
+        this.receipt = receipt;
+    }
+       
+    public void startSale(String custId, ReceiptDataAccessStrategy db, ReceiptOutputStrategy receiptOut) {
+        receipt = new Receipt(custId, db, receiptOut);
+    }
+    
+    public void scanProduct(String prodId, int qty) {
+        receipt.addProduct(prodId, qty);
+    }
+    
+    public void endSale() {
+        receipt.writeReceipt();
+    }
 }

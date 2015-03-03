@@ -59,11 +59,11 @@ public class Product {
         this.discountStrategy = discountStrategy;
     }
     
-    private double getdiscountAmt(int qty){
+    public double getDiscountAmt(int qty){
         return discountStrategy.getDiscountAmount(price, qty);
     }
     
-    private double getTotalAfterDiscount(int qty){
+    public double getTotalAfterDiscount(int qty){
         return discountStrategy.getDiscountTotal(price, qty);
     }
     
@@ -73,7 +73,7 @@ public class Product {
         
         Product product = new Product("Golf Club", "A101", 100, ds);
 //        product.setPrice(1000);
-        System.out.println(product.getdiscountAmt(5));
+        System.out.println(product.getDiscountAmt(5));
         System.out.println(product.getTotalAfterDiscount(5));
     }
 }

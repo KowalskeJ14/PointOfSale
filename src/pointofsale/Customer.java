@@ -18,18 +18,12 @@ public class Customer implements ICustomer{
     public Customer() {
         
     }
-    
-    public Customer(String name, String custId) {
-        this.name = name;
-        this.custId = custId;
-    }
 
     @Override
     public String getName() {
         return name;
     }
 
-    @Override
     public void setName(String name) {
         this.name = name;
     }
@@ -39,10 +33,12 @@ public class Customer implements ICustomer{
         return custId;
     }
 
-    @Override
     public void setCustId(String custId) {
         this.custId = custId;
     }
     
-    
+    public Customer(String name, String custId) {
+        this.name = name;
+        this.custId = custId;
+    }
 }

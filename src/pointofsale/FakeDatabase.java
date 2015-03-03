@@ -19,8 +19,8 @@ public class FakeDatabase implements ReceiptDataAccessStrategy {
     
     private Product[] products = {
         new Product("A101", "MLB Brewer's Hat ", 19.95, new PercentOffStrategy(0.15)),
-        new Product("B205", "Men's Dress Shirt", 35.50, new PercentOffStrategy()),
-        new Product("C222", "Women's Socks    ", 9.50, new DollarOffStrategy())
+        new Product("A102", "Men's Dress Shirt", 35.50, new PercentOffStrategy(0.1)),
+        new Product("A103", "Women's Socks    ", 9.50, new DollarOffStrategy(0.5))
     };
     
     /**
@@ -73,9 +73,9 @@ public class FakeDatabase implements ReceiptDataAccessStrategy {
         return product;
     }
     
-    public static void main(String[] args) {
-        ReceiptDataAccessStrategy da = new FakeDatabase();
-        da.findCustomer("100");
-        
-    }
+//    public static void main(String[] args) {
+//        ReceiptDataAccessStrategy da = new FakeDatabase();
+//        da.findCustomer("100");
+//        
+//    }
 }
