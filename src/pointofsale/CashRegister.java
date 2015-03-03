@@ -25,7 +25,7 @@ public class CashRegister {
     public void setReceipt(Receipt receipt) {
         this.receipt = receipt;
     }
-       
+    
     public void startSale(String custId, ReceiptDataAccessStrategy db, ReceiptOutputStrategy receiptOut) {
         receipt = new Receipt(custId, db, receiptOut);
     }

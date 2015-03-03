@@ -20,7 +20,7 @@ public class Product {
 
     }
 
-    public Product(String name, String prodId, double price, DiscountStrategy discountStrategy) {
+    public Product(String prodId, String name, double price, DiscountStrategy discountStrategy) {
         this.name = name;
         this.prodId = prodId;
         this.price = price;
@@ -67,14 +67,14 @@ public class Product {
         return discountStrategy.getDiscountTotal(price, qty);
     }
     
-    public static void main(String[] args) {
-        
-        DiscountStrategy ds = new PercentOffStrategy();
-        
-        Product product = new Product("Golf Club", "A101", 100, ds);
-//        product.setPrice(1000);
-        System.out.println(product.getDiscountAmt(5));
-        System.out.println(product.getTotalAfterDiscount(5));
-    }
+//    public static void main(String[] args) {
+//        
+//        DiscountStrategy ds = new PercentOffStrategy();
+//        
+//        Product product = new Product("Golf Club", "A101", 100, ds);
+////        product.setPrice(1000);
+//        System.out.println(product.getDiscountAmt(5));
+//        System.out.println(product.getTotalAfterDiscount(5));
+//    }
 }
 

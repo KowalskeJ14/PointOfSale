@@ -12,7 +12,7 @@ package pointofsale;
  */
 public class Receipt {
     
-    private String receiptText;
+    private String receiptText = "";
     private ReceiptDataAccessStrategy db;
     private ReceiptOutputStrategy receiptOut;
     private ICustomer customer;
@@ -23,7 +23,7 @@ public class Receipt {
         this.db = db;
         this.customer = db.findCustomer(custId);
         this.receiptOut = receiptOut;
-        addCustomer();
+//        addCustomer();
     }
     
     private void startReceipt() {
@@ -41,13 +41,13 @@ public class Receipt {
         
         productList = temp;
         temp = null;
-        
-        productList[productList.length - 1] = new LineItem(db.findProduct(prodId), qty);
+        Product p = db.findProduct(prodId);
+        productList[productList.length - 1] = new LineItem(p, qty);
         
         receiptText += productList[productList.length -1].getProduct().getName()
                     + productList[productList.length -1].getQty()
                     + productList[productList.length -1].getProduct().getPrice()
-                    + productList[productList.length -1].getProduct().getDiscountAmt(qty);
+                    + productList[productList.length -1].getProduct().getDiscountAmt(qty) + "\n";
     }
     
     public void writeReceipt() {
